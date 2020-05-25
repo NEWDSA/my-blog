@@ -1,7 +1,7 @@
 <template>
 <div id="app">
   <div>
-  <b-navbar toggleable="lg" type="dark" variant="info">
+  <b-navbar toggleable="lg" type="dark" variant="info" fixed="top">
     <b-navbar-brand href="#">Luciano</b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -44,3 +44,8 @@
 <router-view/>
 </div>
 </template>
+<style lang="scss" scoped>
+ body{
+   overflow-x: hidden;
+ }
+</style>

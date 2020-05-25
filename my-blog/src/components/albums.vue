@@ -1,23 +1,70 @@
 <template>
-<div class="cl-my">
-    <b-card
-      title="Card Title"
-      img-src="https://picsum.photos/600/300/?image=25"
-      img-alt="Image"
-      img-top
-      tag="article"
-      style="max-width: 20rem;"
-      class="mb-2"
-    >
-      <b-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.</b-card-text>
-      <b-button href="#" variant="primary">Go somewhere</b-button>
-    </b-card>
-</div>
+  <div>
+    <b-card-group deck>
+      <b-card
+        title="Title"
+        img-src="https://picsum.photos/300/300/?image=41"
+        img-alt="Image"
+        img-top
+      >
+        <b-card-text>
+          This is a wider card with supporting text below as a natural lead-in to additional content.
+          This content is a little bit longer.
+        </b-card-text>
+        <template v-slot:footer>
+          <small class="text-muted">Last updated 3 mins ago</small>
+        </template>
+      </b-card>
+
+      <b-card
+        title="Title"
+        img-src="https://picsum.photos/300/300/?image=41"
+        img-alt="Image"
+        img-top
+      >
+        <b-card-text>This card has supporting text below as a natural lead-in to additional content.</b-card-text>
+        <template v-slot:footer>
+          <small class="text-muted">Last updated 3 mins ago</small>
+        </template>
+      </b-card>
+
+      <b-card
+        title="Title"
+        img-src="https://picsum.photos/300/300/?image=41"
+        img-alt="Image"
+        img-top
+      >
+        <b-card-text>
+          This is a wider card with supporting text below as a natural lead-in to additional content.
+          This card has even longer content than the first to show that equal height action.
+        </b-card-text>
+        <template v-slot:footer>
+          <small class="text-muted">Last updated 3 mins ago</small>
+        </template>
+      </b-card>
+    </b-card-group>
+  </div>
 </template>
+<script>
+import albumsApi from "@/api/albums";
+export default {
+  data() {
+    return {
+      albums: []
+    };
+  },
+  mounted() {
+    albumsApi.getalbums().then(res => {
+      const resp = res.data;
+      console.log(res);
+      this.albums = resp;
+    });
+  }
+};
+</script>
 <style lang="scss" scoped>
-   .cl-my{
-       position:relative;
-       top: 5rem;
-       left: 1rem;
-   }
+ div{
+   overflow-x: hidden;
+   margin-top: 20px;
+ }
 </style>
