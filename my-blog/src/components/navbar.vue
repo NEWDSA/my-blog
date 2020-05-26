@@ -9,7 +9,7 @@
         <b-nav-item href="#" to="/albums">相册</b-nav-item>
         <b-nav-item href="#" to="/eidt">随笔</b-nav-item>
         <b-nav-item href="#">心情</b-nav-item>
-        <b-nav-item href="#">关于我</b-nav-item>
+        <b-nav-item href="/about">关于我</b-nav-item>
         <b-nav-item href="#" disabled>Disabled</b-nav-item>
       </b-navbar-nav>
 

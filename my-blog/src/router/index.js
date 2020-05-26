@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 // import Home from '../views/Home.vue'
 import Albums from '@/components/albums.vue'
 import Eidt from '@/components/edit.vue'
+import About from '@/views/About.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -28,6 +29,11 @@ const routes = [
     path: '/eidt',
     name: 'edit',
     component: Eidt
+  },
+  {
+    path:'/about',
+    name:'about',
+    component:About
   }
 ]
 

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="ax">
   <!-- bidirectional data binding（双向数据绑定） -->
     <quill-editor
       class="ql-editor aa"
@@ -31,7 +31,7 @@ export default {
 
     onEditorFocus() {
       console.log("focus", this.messages);
-      this.content = "";
+      // this.content = "";
     },
     onEditorChange() {
       console.log("change", this.$el.__vue__.$children[0]._content);
@@ -55,9 +55,14 @@ export default {
 <style scoped>
 .aa {
   margin-top: 50px;
-  
+  height: 400px;
+  overflow: hidden;
+}
+.ax{
+  height: 100%;
 }
 .btn{
   margin-left: 15px;
+  bottom: 0;
 }
 </style>
