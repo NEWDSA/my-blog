@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 // import Home from '../views/Home.vue'
 import Albums from '@/components/albums.vue'
-import Eidt from '@/views/edit.vue'
+import Eidt from '@/components/edit.vue'
 Vue.use(VueRouter)
 
 const routes = [

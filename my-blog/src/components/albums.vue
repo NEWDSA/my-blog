@@ -46,21 +46,21 @@
   </div>
 </template>
 <script>
-import albumsApi from "@/api/albums";
+import albumsApi from '@/api/albums'
 export default {
-  data() {
+  data () {
     return {
       albums: []
-    };
+    }
   },
-  mounted() {
+  mounted () {
     albumsApi.getalbums().then(res => {
-      const resp = res.data;
-      console.log(res);
-      this.albums = resp;
-    });
+      const resp = res.data
+      console.log(res)
+      this.albums = resp
+    })
   }
-};
+}
 </script>
 <style lang="scss" scoped>
  div{
