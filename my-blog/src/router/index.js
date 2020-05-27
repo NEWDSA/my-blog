@@ -4,6 +4,8 @@ import VueRouter from 'vue-router'
 import Albums from '@/components/albums.vue'
 import Eidt from '@/components/edit.vue'
 import About from '@/views/About.vue'
+import Note from '@/views/Note.vue'
+import { BIconMusicNote } from 'bootstrap-vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -26,14 +28,19 @@ const routes = [
     component: Albums
   },
   {
+    path: '/note',
+    name: 'note',
+    component: Note
+  },
+  {
     path: '/eidt',
     name: 'edit',
     component: Eidt
   },
   {
-    path:'/about',
-    name:'about',
-    component:About
+    path: '/about',
+    name: 'about',
+    component: About
   }
 ]
 

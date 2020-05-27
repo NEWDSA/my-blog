@@ -1,3 +1,4 @@
+const path=require('path')
 module.exports = {
   devServer: {
     port: 8888, // 端口号，如果端口号被占用，会自动提升1
