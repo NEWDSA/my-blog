@@ -29,4 +29,9 @@ vue    4.41.2
 | insertTime | datetime        |
 | updateTime | datetime        |
 ## 日记表
-
+| id         | int             |
+|------------|-----------------|
+| title      | nvarchar\(50\)  |
+| content    | nvarchar\(max\) |
+| insertTime | datetime        |
+| updateTime | datetime        |
