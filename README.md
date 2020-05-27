@@ -1,5 +1,17 @@
 # my-blog
-luciano first bootstrap-vue blog use html5 and node.js axios and so on
+这是我初次使用vue和bootstrap-vue 进行一次探索。
+当然在之前也使用过其它框架与vue配合使用效果不理想。
 # 使用到的技术
-This Project i use HTML5 SASS NODEJS BOOTSTRAP UI AND VUE FRAMEWROK AND AXIOS 
-# EXPLOER
+本次项目使用到的技术有
+axios用于数据的请求与发送
+vue/cli 方便快速构建工程
+bootstrap-vue 更适合结合vue使用且适配pc移动端
+qull-editor 更适合移动pc端
+sqlserver2014
+# 将要完成的功能
+1.首页的展示
+2.查看日记
+3.相册浏览
+4.关于我
+5.数据分页(待考量）
+5.后台管理页面相册管理、日记管理、关于我页面的管理。
