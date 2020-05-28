@@ -47,7 +47,8 @@ export default {
   },
   methods:{
     search(){
-      alert(this.text);
+      // alert(this.text);
+      this.$route.push({name:'search'});
     }
   }
 }

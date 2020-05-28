@@ -5,6 +5,7 @@ import Albums from '@/components/albums.vue'
 import Eidt from '@/components/edit.vue'
 import About from '@/views/About.vue'
 import Note from '@/views/Note.vue'
+import Search from '@/views/Search.vue'
 import { BIconMusicNote } from 'bootstrap-vue'
 Vue.use(VueRouter)
 
@@ -41,6 +42,11 @@ const routes = [
     path: '/about',
     name: 'about',
     component: About
+  },
+  {
+    path:'/search',
+    name:'search',
+    component:Search
   }
 ]
 
