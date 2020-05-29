@@ -1,4 +1,4 @@
-const path=require('path')
+// const path = require('path')
 module.exports = {
   devServer: {
     port: 8888, // 端口号，如果端口号被占用，会自动提升1
@@ -15,6 +15,15 @@ module.exports = {
           // 将请求地址前缀 /dev-api 替换为空的
           // '^/dev-api': ''
           ['^' + process.env.VUE_APP_BASE_API]: ''
+        }
+      },
+      [process.env.VUE_APP_ROBOT_API]: {
+        target: process.env.VUE_APP_SERVICE_ROBOT,
+        changeOrigin: true, // 开启代理服务器
+        pathRewrite: {
+          // 将请求地址前缀  /dev-api 替换为空的
+          // '^/robot_api':''
+          ['^' + process.env.VUE_APP_ROBOT_API]: ''
         }
       }
     }

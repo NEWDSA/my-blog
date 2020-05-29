@@ -11,28 +11,27 @@
   </div>
 </template>
 <script>
-import NoteApi from "@/api/note";
+import NoteApi from '@/api/note'
 export default {
-  data() {
+  data () {
     return {
       note: []
-    };
+    }
   },
-  mounted() {
+  mounted () {
     NoteApi.getNotes().then(res => {
-      const resp = res.data;
-      console.log(res);
-      this.note = resp;
-    });
+      const resp = res.data
+      console.log(res)
+      this.note = resp
+    })
   }
-};
+}
 </script>
 <style scoped>
 .note {
   position: relative;
   text-align: center;
   top: 70px;
-
 
 }
 .title {

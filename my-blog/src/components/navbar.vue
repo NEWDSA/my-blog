@@ -1,6 +1,6 @@
 <template>
   <b-navbar toggleable="lg" type="dark" variant="info" fixed="top">
-    <b-navbar-brand href="#">Luciano</b-navbar-brand>
+    <b-navbar-brand href="#" to="/">Luciano</b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -40,15 +40,15 @@
 </template>
 <script>
 export default {
-  data(){
+  data () {
     return {
       text: null
-    };
+    }
   },
-  methods:{
-    search(){
+  methods: {
+    search () {
       // alert(this.text);
-      this.$route.push({name:'search'});
+      this.$route.push({ name: 'search' })
     }
   }
 }

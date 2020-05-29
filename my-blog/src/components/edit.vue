@@ -40,9 +40,7 @@ export default {
       console.log('ready', this.messages)
     },
     publish () {
-      if (this.$el.__vue__.$children[0]._content === '')
-      // window.alert(`TEST OK`+this.$el.__vue__.$children[0]._content);
-      {} else { console.log('HI LINDA !!!!') }
+      if (this.$el.__vue__.$children[0]._content === '') { window.alert('TEST OK' + this.$el.__vue__.$children[0]._content) } else { console.log('HI LINDA !!!!') }
     }
   },
   mounted () {

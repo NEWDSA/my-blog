@@ -18,7 +18,6 @@
 <style scoped>
 .cont {
   margin-top: 30%;
-  
 
 }
 .title{
