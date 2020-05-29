@@ -116,7 +116,7 @@ export default {
     }
   },
   destroyed(){
-    clearInterval(this.timer)
+    // clearInterval(this.timer)
   }
 };
 </script>
