@@ -7,7 +7,7 @@ axios用于数据的请求与发送
 vue/cli 方便快速构建工程
 bootstrap-vue 更适合结合vue使用且适配pc移动端
 qull-editor 更适合移动pc端
-sqlserver2014
+sqlserver express 2019
 # nodejs及各种工具版本号
 node v12.13.0
 webpack 4.41.2
