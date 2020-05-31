@@ -66,6 +66,7 @@
       我的
       <b>小主</b>人!
     </b-popover>
+
     <div>
       <b-form-textarea
         id="textarea"
@@ -76,54 +77,70 @@
         v-model="text"
         max-rows="6"
       ></b-form-textarea>
-      <b-form-input id="input-sm" class="in" v-model.trim="content" size="sm" placeholder="请输入您的内容！(按回车以提交)" @keyup.enter="robot(this)"></b-form-input>
+      <b-form-input
+        id="input-sm"
+        class="in"
+        v-model.trim="content"
+        size="sm"
+        placeholder="请输入您的内容！(按回车以提交)"
+        @keyup.enter="robot(this)"
+      ></b-form-input>
+      <Round class="rw" />
     </div>
   </div>
 </template>
 
 <script>
-import RobotApi from "@/api/robot";
+import RobotApi from '@/api/robot'
+import Round from '@/components/Round.vue'
 export default {
-  data() {
+  data () {
     return {
-      text: "",
+      text: '',
       content: null
-    };
+    }
   },
-  mounted(){
-   //vue 设置超时时间
-  //  if(this.timer){
-  //    clearInterval(this.timer)
-  //  }else{
-  //    this.timer=setInterval(()=>{
-  //      this.content="";
-  //    },1000*30)
-  //  }
+  mounted () {
+    // vue 设置超时时间
+    //  if(this.timer){
+    //    clearInterval(this.timer)
+    //  }else{
+    //    this.timer=setInterval(()=>{
+    //      this.content="";
+    //    },1000*30)
+    //  }
+  },
+  components: {
+    Round
   },
   methods: {
-    robot() {
-      console.log(this.$refs.tarea.$el.__vue__);
-      
+    robot () {
+      console.log(this.$refs.tarea.$el.__vue__)
+
       // if (!this.content == null || !this.content == "") {
       //   this.content = "您: " + this.content;
       // }
       RobotApi.getRobot(this.content).then(res => {
-        const resp = res.data.content;
-        this.text+=this.content+ " 小Q回复:" + resp+'\n';
-      });
-      //设置超时时间
-
+        const resp = res.data.content
+        console.log(resp)
+        this.text += this.content + ' 小Q回复:' + resp + '\n'
+        // 语音机器人
+        var ssu = new window.SpeechSynthesisUtterance(this.text)
+        window.speechSynthesis.speak(ssu)
+      })
+      // 设置超时时间
     }
   },
-  destroyed(){
+  destroyed () {
     // clearInterval(this.timer)
   }
-};
+}
 </script>
 <style scoped>
 .ro {
   position: relative;
   top: 70px;
+  background-image: url('https://img.ivsky.com/img/tupian/pre/201910/31/yinhe-013.jpg');
 }
 
 .icon {
@@ -134,7 +151,12 @@ export default {
 .tar {
   text-align: center;
 }
-.in{
+.in {
   text-align: center;
+}
+.rw {
+  position: relative;
+  top: 0;
+  bottom: 0;
 }
 </style>
