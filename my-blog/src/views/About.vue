@@ -17,8 +17,11 @@
 </template>
 <style scoped>
 .cont {
-  margin-top: 30%;
-
+  position: absolute;
+  top: 50%;
+  margin-top: -132px;
+  left:0
+  
 }
 .title{
   text-align: center;

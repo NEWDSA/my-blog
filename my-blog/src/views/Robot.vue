@@ -67,7 +67,7 @@
       <b>小主</b>人!
     </b-popover>
 
-    <div>
+    <!-- <div>
       <b-form-textarea
         id="textarea"
         class="tar"
@@ -85,14 +85,12 @@
         placeholder="请输入您的内容！(按回车以提交)"
         @keyup.enter="robot(this)"
       ></b-form-input>
-      <Round class="rw" />
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script>
 import RobotApi from '@/api/robot'
-import Round from '@/components/Round.vue'
 export default {
   data () {
     return {
@@ -109,9 +107,6 @@ export default {
     //      this.content="";
     //    },1000*30)
     //  }
-  },
-  components: {
-    Round
   },
   methods: {
     robot () {
@@ -137,17 +132,7 @@ export default {
 }
 </script>
 <style scoped>
-.ro {
-  position: relative;
-  top: 70px;
-  background-image: url('https://img.ivsky.com/img/tupian/pre/201910/31/yinhe-013.jpg');
-}
 
-.icon {
-  position: relative;
-  left: 50%;
-  margin-left: -100px;
-}
 .tar {
   text-align: center;
 }
@@ -158,5 +143,14 @@ export default {
   position: relative;
   top: 0;
   bottom: 0;
+  /* background: #000; */
+}
+.ro{
+  position: absolute;
+  top: 50%;
+  left:50%;
+  margin-top: -100px;
+  margin-left: -100px;
+  border: 1px solid red;
 }
 </style>

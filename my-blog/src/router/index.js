@@ -6,14 +6,14 @@ import Eidt from '@/components/edit.vue'
 import About from '@/views/About.vue'
 import Note from '@/views/Note.vue'
 import Search from '@/views/Search.vue'
-import Robot from '@/views/Robot.vue'
+import Round from '@/components/Round.vue'
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Robot',
-    component: Robot
+    name: 'Round',
+    component: Round
   },
   {
     path: '/albums',
