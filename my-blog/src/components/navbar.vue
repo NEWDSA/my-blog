@@ -1,6 +1,6 @@
 <template>
-  <b-navbar toggleable="lg" type="dark" variant="info" fixed="top">
-    <b-navbar-brand href="#" to="/">Luciano</b-navbar-brand>
+  <b-navbar toggleable="lg" type="dark" variant="dark" fixed="top">
+    <b-navbar-brand href="#" to="/luciano">Luciano</b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -8,7 +8,7 @@
       <b-navbar-nav>
         <b-nav-item href="#" to="/albums">相册</b-nav-item>
         <b-nav-item href="#" to="/note">随笔</b-nav-item>
-        <b-nav-item href="#">心情</b-nav-item>
+        <b-nav-item href="#" to="/music">Music</b-nav-item>
         <b-nav-item href="#" to="/about">关于我</b-nav-item>
       </b-navbar-nav>
 

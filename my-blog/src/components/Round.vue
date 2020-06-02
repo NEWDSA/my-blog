@@ -1,39 +1,84 @@
 <template>
+  <div class="rr">
+    <b-carousel
+      id="carousel-1"
+      v-model="slide"
+      :interval="4000"
+      controls
+      indicators
+      background="#ababab"
+      img-width="1024"
+      img-height="480"
+      style="text-shadow: 1px 1px 2px #333;"
+      @sliding-start="onSlideStart"
+      @sliding-end="onSlideEnd"
+    >
+      <!-- Text slides with image -->
+      <b-carousel-slide
+        caption="First slide"
+        text="Nulla vitae elit libero, a pharetra augue mollis interdum."
+        img-src="https://picsum.photos/1024/480/?image=52"
+      ></b-carousel-slide>
 
-  <swiper ref="mySwiper" :options="swiperOptions">
-    <swiper-slide><img width="100%" height="500px" src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1590673103198&amp;di=9c13f4b2a64cfa88efd759cce95ce14f&amp;imgtype=0&amp;src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201411%2F25%2F20141125151026_fK8tV.jpeg" alt="Image"></swiper-slide>
-    <swiper-slide><img width="100%" height="500px"    src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1590673103198&amp;di=9c13f4b2a64cfa88efd759cce95ce14f&amp;imgtype=0&amp;src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201411%2F25%2F20141125151026_fK8tV.jpeg" alt="Image"></swiper-slide>
-    <swiper-slide><img width="100%" height="500px"   src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1590673103198&amp;di=9c13f4b2a64cfa88efd759cce95ce14f&amp;imgtype=0&amp;src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201411%2F25%2F20141125151026_fK8tV.jpeg" alt="Image"></swiper-slide>
-    <swiper-slide><img width="100%" height="500px"    src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1590673103198&amp;di=9c13f4b2a64cfa88efd759cce95ce14f&amp;imgtype=0&amp;src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201411%2F25%2F20141125151026_fK8tV.jpeg" alt="Image"></swiper-slide>
-    <swiper-slide><img width="100%" height="500px"    src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1590673103198&amp;di=9c13f4b2a64cfa88efd759cce95ce14f&amp;imgtype=0&amp;src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201411%2F25%2F20141125151026_fK8tV.jpeg" alt="Image"></swiper-slide>
-    <div class="swiper-pagination" slot="pagination"></div>
-  </swiper>
+      <!-- Slides with custom text -->
+      <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=54">
+        <h1>Hello world!</h1>
+      </b-carousel-slide>
+
+      <!-- Slides with image only -->
+      <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=58"></b-carousel-slide>
+
+      <!-- Slides with img slot -->
+      <!-- Note the classes .d-block and .img-fluid to prevent browser default image alignment -->
+      <b-carousel-slide>
+        <template v-slot:img>
+          <img
+            class="d-block img-fluid w-100"
+            width="1024"
+            height="480"
+            src="https://picsum.photos/1024/480/?image=55"
+            alt="image slot"
+          >
+        </template>
+      </b-carousel-slide>
+
+      <!-- Slide with blank fluid image to maintain slide aspect ratio -->
+      <b-carousel-slide caption="Blank Image" img-blank img-alt="Blank image">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eros felis, tincidunt
+          a tincidunt eget, convallis vel est. Ut pellentesque ut lacus vel interdum.
+        </p>
+      </b-carousel-slide>
+    </b-carousel>
+
+    <!-- <p class="mt-4">
+      Slide #: {{ slide }}<br>
+      Sliding: {{ sliding }}
+    </p> -->
+  </div>
 </template>
 
 <script>
-export default {
-  name: 'carrousel',
-  data () {
-    return {
-      swiperOptions: {
-        pagination: {
-          el: '.swiper-pagination'
-        }
-        // Some Swiper option/callback...
+  export default {
+    data() {
+      return {
+        slide: 0,
+        sliding: null
+      }
+    },
+    methods: {
+      onSlideStart(slide) {
+        this.sliding = true
+      },
+      onSlideEnd(slide) {
+        this.sliding = false
       }
     }
-  },
-  computed: {
-    swiper () {
-      return this.$refs.mySwiper.$swiper
-    }
-  },
-  mounted () {
-    console.log('Current Swiper instance object', this.swiper)
-    this.swiper.slideTo(3, 1000, false)
   }
-}
 </script>
 <style scoped>
-
+ .rr{
+   height: 100%;
+   border: 1px solid red;
+ }
 </style>

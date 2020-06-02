@@ -1,7 +1,7 @@
 <template>
 <div id="app">
 <navbar/>
-<router-view class="rr"/>
+<router-view/>
 </div>
 </template>
 <script>
@@ -13,9 +13,8 @@ export default {
 }
 </script>
 <style scoped>
-  .rr{
-    background: #000;
-    width: 100%;
-    height: 100%;
-  }
+.music{
+  position: relative;
+  top: 70px;
+}
 </style>

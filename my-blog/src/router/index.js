@@ -1,17 +1,18 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 // import Home from '../views/Home.vue'
-import Albums from '@/components/albums.vue'
-import Eidt from '@/components/edit.vue'
-import About from '@/views/About.vue'
-import Note from '@/views/Note.vue'
-import Search from '@/views/Search.vue'
-import Round from '@/components/Round.vue'
+import Albums from '@/components/albums'
+import Eidt from '@/components/edit'
+import About from '@/views/About'
+import Note from '@/views/Note'
+import Search from '@/views/Search'
+import Round from '@/components/Round'
+import Music from '@/views/Music'
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
+    path: '/luciano',
     name: 'Round',
     component: Round
   },
@@ -39,6 +40,10 @@ const routes = [
     path: '/search',
     name: 'search',
     component: Search
+  },{
+    path:'/music',
+    name:'music',
+    component:Music
   }
 ]
 
