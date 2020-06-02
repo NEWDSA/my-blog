@@ -1,5 +1,5 @@
 <template>
-  <div class="rr">
+  <div>
     <b-carousel
       id="carousel-1"
       v-model="slide"
@@ -26,7 +26,7 @@
       </b-carousel-slide>
 
       <!-- Slides with image only -->
-      <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=58"></b-carousel-slide>
+      <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=58" ></b-carousel-slide>
 
       <!-- Slides with img slot -->
       <!-- Note the classes .d-block and .img-fluid to prevent browser default image alignment -->
@@ -76,9 +76,3 @@
     }
   }
 </script>
-<style scoped>
- .rr{
-   height: 100%;
-   border: 1px solid red;
- }
-</style>

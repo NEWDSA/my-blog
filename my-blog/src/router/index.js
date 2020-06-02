@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 // import Home from '../views/Home.vue'
-import Albums from '@/components/albums'
+import Albums from '@/components/albums.vue'
 import Eidt from '@/components/edit'
 import About from '@/views/About'
 import Note from '@/views/Note'
@@ -12,7 +12,7 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/luciano',
+    path: '/',
     name: 'Round',
     component: Round
   },

@@ -12,9 +12,4 @@ export default {
   }
 }
 </script>
-<style scoped>
-.music{
-  position: relative;
-  top: 70px;
-}
-</style>
+

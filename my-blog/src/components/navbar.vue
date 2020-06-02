@@ -1,6 +1,6 @@
 <template>
   <b-navbar toggleable="lg" type="dark" variant="dark" fixed="top">
-    <b-navbar-brand href="#" to="/luciano">Luciano</b-navbar-brand>
+    <b-navbar-brand href="#" to="/">Luciano</b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -31,7 +31,7 @@
           <template v-slot:button-content>
             <em>Luciano</em>
           </template>
-          <b-dropdown-item href="#">Profile</b-dropdown-item>
+          <b-dropdown-item href="#">设置</b-dropdown-item>
           <b-dropdown-item href="#">登出</b-dropdown-item>
         </b-nav-item-dropdown>
       </b-navbar-nav>
