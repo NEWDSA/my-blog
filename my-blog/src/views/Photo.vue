@@ -1,0 +1,91 @@
+<template>
+  <div class="flex" ref="flex">
+    <div class="box" v-for="ab in albums" :key="ab.id"><img :src="ab.url"/><p>{{ab.title}}</p></div>
+
+    </div>
+</template>
+<style scoped>
+ *{
+            margin:0;
+            padding:0;
+        }
+        .flex{
+            display: flex;
+            flex-flow: row wrap;
+            height: 200px;
+            margin-top: 70px;
+            margin-left: 10px;
+            margin-right: 10px;
+          
+        }
+        .box{
+            width:200px;
+            height: 200px;
+            margin-top: 40px;
+            margin-left: 40px;
+            margin-right: 20px;
+            text-align: center;
+            background:grey;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+        img{
+             width:100%;
+            height:100%;
+            text-align: center;
+           
+        }
+        .box>p{
+           background: white;
+           cursor: pointer;
+
+        }
+        @media screen and (max-width: 800px) {
+            
+        *{
+            margin:0;
+            padding:0;
+        }
+        .flex{
+            display:block;
+          
+        }
+        .box{
+            width:100%;
+            height:100%;
+            background: gray;
+            text-align: center;
+             margin-bottom: 30px;
+            
+        }
+        img{
+             width:100%;
+            height:100%;
+            background: gray;
+            text-align: center;
+           
+        }
+        
+        .flex-box{
+            flex:1
+        }
+    }
+
+</style>
+<script>
+import photoApi from '@/api/photo'
+export default {
+    data(){
+        return {
+            albums:[]
+        }
+    },
+    mounted(){
+        photoApi.getPhotos().then(res=>{
+            const resp=res.data
+            console.log(res)
+            this.albums=resp
+        });
+    }
+}
+</script>

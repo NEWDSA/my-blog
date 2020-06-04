@@ -1,13 +1,14 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-// import Home from '../views/Home.vue'
-import Albums from '@/components/albums.vue'
+//import Albums from '@/components/albums.vue'
+import albs from '@/components/albms.vue'
 import Eidt from '@/components/edit'
 import About from '@/views/About'
 import Note from '@/views/Note'
-import Search from '@/views/Search'
-import Round from '@/components/Round'
+import Search from '@/views/Search.vue'
+import Round from '@/components/Round.vue'
 import Music from '@/views/Music'
+import Photo from '@/views/Photo.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -19,7 +20,12 @@ const routes = [
   {
     path: '/albums',
     name: 'albums',
-    component: Albums
+    component: albs
+  },
+  {
+    path:'/photo',
+    name:'photo',
+    component:Photo
   },
   {
     path: '/note',

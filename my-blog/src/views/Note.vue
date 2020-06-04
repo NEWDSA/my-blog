@@ -23,6 +23,7 @@ export default {
       const resp = res.data
       console.log(res)
       this.note = resp
+      console.log(this)
     })
   }
 }

@@ -48,7 +48,8 @@ export default {
   methods: {
     search () {
       // alert(this.text);
-      this.$route.push({ name: 'search' })
+      console.log(this)
+      that.$route.push({ name: 'search' })
     }
   }
 }

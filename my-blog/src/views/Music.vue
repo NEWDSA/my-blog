@@ -6,31 +6,29 @@
   </div>
 </template>
 <style scoped>
-body{
-    font-size: 62.5%;
-}
+*
 body {
   width: 100%;
   height: 100%;
   position: relative;
-  border: 0.1rem solid green;
+  border: 1px solid green;
 }
 .contentr {
   position: absolute;
-  widows: 50rem;
-  height: 50rem;
+  widows: 500px;
+  height: 500px;
   top: 50%;
   left: 50%;
-  margin-top: -25rem;
-  margin-left: -25rem;
-  border-radius: 50rem;
-  border: 0.1rem solid pink;
+  margin-top: -250px;
+  margin-left: -250px;
+  border-radius: 500px;
+  border: 1px solid pink;
   text-align: center;
   background: #000;
 }
 .contentr h1 {
   position: relative;
-  width: 50rem;
+  width: 500px;
   top: 50%;
 }
 /*设置关键帧动画*/

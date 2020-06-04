@@ -1,0 +1,8 @@
+关于在制作这个项目期间所遇到的问题，希望今后能够改正
+1. flex布局我对于flex 布局还不怎么会用
+2. vw、vh这些新鲜的视口布局了解甚少
+3.bootstrap-vue轮播图对移动端适配不行，最后通过使用 100vh解决
+4.关于如何实现 多个div自动换行，以下是大神的代码
+https://www.cnblogs.com/orzzt/p/9713037.html
+5.已经遗忘了如何创建SQLserver数据库关系图(可以参考这篇博客)
+https://www.cnblogs.com/PyLearn/p/7624768.html
