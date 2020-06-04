@@ -1,7 +1,7 @@
 <template>
   <div class="flex" ref="flex">
     <div class="box" v-for="ab in albums" :key="ab.id" @click="search()">
-      <img :src="ab.thumbnail" />
+      <img :src="ab.thumbnail"/>
       <p>{{ab.title}}</p>
     </div>
   </div>
@@ -9,6 +9,7 @@
 <style scoped>
 * {
   margin: 0;
+
   padding: 0;
 }
 .flex {
@@ -77,7 +78,6 @@ export default {
   },
   methods: {
     search() {
-      // alert(this.text);
       console.log(this)
       this.$router.push({ name: "photo" });
     }
