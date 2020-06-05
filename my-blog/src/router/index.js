@@ -23,7 +23,7 @@ const routes = [
     component: albs
   },
   {
-    path: '/photo',
+    path: '/photo/:id',
     name: 'photo',
     component: Photo
   },

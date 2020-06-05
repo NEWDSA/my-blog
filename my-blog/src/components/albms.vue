@@ -79,9 +79,10 @@ export default {
     }
   },
   methods: {
-    search () {
+    search (id) {
       console.log(this)
-      this.$router.push({ name: 'photo' })
+    
+        this.$router.push({ name: 'photo',params:{id:`${id}`}})
     }
   },
   mounted () {

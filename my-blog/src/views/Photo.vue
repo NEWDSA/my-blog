@@ -46,6 +46,7 @@ img {
 .close{
     position: relative;
     top: -100%;
+    font-size: 10px;
 }
 .show{
     position: fixed;
