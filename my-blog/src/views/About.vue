@@ -21,7 +21,7 @@
   top: 50%;
   margin-top: -132px;
   left:0
-  
+
 }
 .title{
   text-align: center;

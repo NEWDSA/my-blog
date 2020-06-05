@@ -49,7 +49,7 @@ export default {
     search () {
       // alert(this.text);
       console.log(this)
-      that.$route.push({ name: 'search' })
+      this.$route.push({ name: 'search' })
     }
   }
 }

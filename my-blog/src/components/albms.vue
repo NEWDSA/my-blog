@@ -1,7 +1,7 @@
 <template>
   <div class="flex" ref="flex">
-    <div class="box" v-for="ab in albums" :key="ab.id" @click="search()">
-      <img :src="ab.thumbnail"/>
+    <div class="box" v-for="ab in albums" :key="ab.id" @click="search(ab.id)">
+      <img :src="ab.thumbnail" />
       <p>{{ab.title}}</p>
     </div>
   </div>
@@ -54,6 +54,8 @@ img {
     background: black;
     text-align: center;
     margin-bottom: 30px;
+    margin-left: 0;
+    margin-right: 0;
     border: 1px solid gray;
   }
   img {
@@ -69,25 +71,24 @@ img {
 }
 </style>
 <script>
-import albumsApi from "@/api/albums";
+import albumsApi from '@/api/albums'
 export default {
-  data() {
+  data () {
     return {
       albums: []
-    };
-  },
-  methods: {
-    search() {
-      console.log(this)
-      this.$router.push({ name: "photo" });
     }
   },
-  mounted() {
+  methods: {
+    search () {
+      console.log(this)
+      this.$router.push({ name: 'photo' })
+    }
+  },
+  mounted () {
     albumsApi.getalbums().then(res => {
-      const resp = res.data;
-      console.log(res);
-      this.albums = resp;
-    });
+      const resp = res.data
+      this.albums = resp
+    })
   }
-};
+}
 </script>

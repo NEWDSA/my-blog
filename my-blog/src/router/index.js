@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-//import Albums from '@/components/albums.vue'
+// import Albums from '@/components/albums.vue'
 import albs from '@/components/albms.vue'
 import Eidt from '@/components/edit'
 import About from '@/views/About'
@@ -23,9 +23,9 @@ const routes = [
     component: albs
   },
   {
-    path:'/photo',
-    name:'photo',
-    component:Photo
+    path: '/photo',
+    name: 'photo',
+    component: Photo
   },
   {
     path: '/note',
@@ -46,10 +46,10 @@ const routes = [
     path: '/search',
     name: 'search',
     component: Search
-  },{
-    path:'/music',
-    name:'music',
-    component:Music
+  }, {
+    path: '/music',
+    name: 'music',
+    component: Music
   }
 ]
 

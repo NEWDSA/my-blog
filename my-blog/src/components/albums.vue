@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-card-group deck class="cardr">
-      <b-card  v-for="ab in albums" :key="ab.id" 
+      <b-card  v-for="ab in albums" :key="ab.id"
         :title="ab.title"
         :img-src="ab.url"
         img-alt="Image"

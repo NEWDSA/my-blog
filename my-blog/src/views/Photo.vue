@@ -1,91 +1,118 @@
 <template>
   <div class="flex" ref="flex">
-    <div class="box" v-for="ab in albums" :key="ab.id"><img :src="ab.url"/><p>{{ab.title}}</p></div>
-
+    <div @click="photos()" class="box" v-for="ab in albums" :key="ab.id">
+      <img :src="ab.url" />
+      <p>{{ab.title}}</p>
     </div>
+    <div :class="[this.flag?'show':'hidden']"><img width="50%" height="50%" src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3565578506,42843461&fm=26&gp=0.jpg"/><span class="close" @click="close()">关闭</span></div>
+  </div>
 </template>
 <style scoped>
- *{
-            margin:0;
-            padding:0;
-        }
-        .flex{
-            display: flex;
-            flex-flow: row wrap;
-            height: 200px;
-            margin-top: 70px;
-            margin-left: 10px;
-            margin-right: 10px;
-          
-        }
-        .box{
-            width:200px;
-            height: 200px;
-            margin-top: 40px;
-            margin-left: 40px;
-            margin-right: 20px;
-            text-align: center;
-            background:grey;
-            margin-bottom: 20px;
-            cursor: pointer;
-        }
-        img{
-             width:100%;
-            height:100%;
-            text-align: center;
-           
-        }
-        .box>p{
-           background: white;
-           cursor: pointer;
+* {
+  margin: 0;
+  padding: 0;
+}
+.flex {
+  display: flex;
+  flex-flow: row wrap;
+  height: 200px;
+  margin-top: 70px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.box {
+  width: 200px;
+  height: 200px;
+  margin-top: 40px;
+  margin-left: 40px;
+  margin-right: 20px;
+  text-align: center;
+  background: grey;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+img {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.box > p {
+  background: white;
+  cursor: pointer;
+}
+.hidden {
+  display: none;
+}
+.close{
+    position: relative;
+    top: -100%;
+}
+.show{
+    position: fixed;
+    top:70px;
+    left: 50%;
+    margin-left: -250px;
+    bottom: 20px;
+    display:block;
+    z-index: 1;
+    background: gray;
+    cursor: pointer;
 
-        }
-        @media screen and (max-width: 800px) {
-            
-        *{
-            margin:0;
-            padding:0;
-        }
-        .flex{
-            display:block;
-          
-        }
-        .box{
-            width:100%;
-            height:100%;
-            background: gray;
-            text-align: center;
-             margin-bottom: 30px;
-            
-        }
-        img{
-             width:100%;
-            height:100%;
-            background: gray;
-            text-align: center;
-           
-        }
-        
-        .flex-box{
-            flex:1
-        }
-    }
+}
+@media screen and (max-width: 800px) {
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  .flex {
+    display: block;
+  }
+  .box {
+    width: 100%;
+    height: 100%;
+    background: gray;
+    text-align: center;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    background: gray;
+    text-align: center;
+  }
 
+  .flex-box {
+    flex: 1;
+  }
+}
 </style>
 <script>
 import photoApi from '@/api/photo'
 export default {
-    data(){
-        return {
-            albums:[]
-        }
-    },
-    mounted(){
-        photoApi.getPhotos().then(res=>{
-            const resp=res.data
-            console.log(res)
-            this.albums=resp
-        });
+  data () {
+    return {
+      albums: [],
+      flag: false
     }
+  },
+  methods: {
+    photos () {
+      this.flag = !this.flag
+
+      console.log(this.albums[0].url)
+    },
+    close () {
+      this.flag = !this.flag
+    }
+  },
+  mounted () {
+    photoApi.getPhotos().then(res => {
+      const resp = res.data
+      console.log(res)
+      this.albums = resp
+    })
+  }
 }
 </script>
