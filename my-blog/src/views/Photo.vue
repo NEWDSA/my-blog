@@ -1,10 +1,10 @@
 <template>
   <div class="flex" ref="flex">
-    <div @click="photos()" class="box" v-for="ab in albums" :key="ab.id">
+    <div @click="photos(ab.url)" class="box" v-for="ab in albums" :key="ab.id">
       <img :src="ab.url" />
       <p>{{ab.title}}</p>
     </div>
-    <div :class="[this.flag?'show':'hidden']"><img width="50%" height="50%" src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3565578506,42843461&fm=26&gp=0.jpg"/><span class="close" @click="close()">关闭</span></div>
+    <div :class="[this.flag?'show':'hidden']"><img width="50%" height="50%" :src="this.img"/><span class="close" @click="close()">关闭</span></div>
   </div>
 </template>
 <style scoped>
@@ -52,6 +52,7 @@ img {
     position: fixed;
     top:70px;
     left: 50%;
+    width: 500px;
     margin-left: -250px;
     bottom: 20px;
     display:block;
@@ -60,6 +61,9 @@ img {
     cursor: pointer;
 
 }
+
+
+
 @media screen and (max-width: 800px) {
   * {
     margin: 0;
@@ -87,6 +91,18 @@ img {
   .flex-box {
     flex: 1;
   }
+  .show{
+    position: fixed;
+    top:70px;
+    left: 0;
+    width: 100%;
+    margin-left: 0;
+    bottom: 20px;
+    display:block;
+    z-index: 1;
+    background: gray;
+    cursor: pointer;
+}
 }
 </style>
 <script>
@@ -95,13 +111,14 @@ export default {
   data () {
     return {
       albums: [],
-      flag: false
+      flag: false,
+      img:''
     }
   },
   methods: {
-    photos () {
+    photos (id) {
       this.flag = !this.flag
-
+      this.img=id
       console.log(this.albums[0].url)
     },
     close () {
@@ -109,7 +126,7 @@ export default {
     }
   },
   mounted () {
-    photoApi.getPhotos(this.$route.query.userId).then(res => {
+    photoApi.getPhotos(this.$route.query.ph).then(res => {
       const resp = res.data
       console.log(res)
       this.albums = resp

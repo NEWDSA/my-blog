@@ -80,9 +80,8 @@ export default {
   },
   methods: {
     search (id) {
-        const userId = id
-        console.log(userId)
-        this.$router.push({ path: '/photo',query:{userId}})
+        const ph = id
+        this.$router.push({ path: '/photo',query:{ph}})
        
     }
   },

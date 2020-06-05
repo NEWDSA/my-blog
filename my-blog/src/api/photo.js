@@ -1,12 +1,12 @@
 import request from '@/utils/request'
 
 export default {
-  getPhotos (userId) {
+  getPhotos (ph) {
     return request({
       method: 'get',
       url: '/photo',
       params: {
-        userId
+        ph
     }
       
     })
