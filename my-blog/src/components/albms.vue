@@ -80,9 +80,10 @@ export default {
   },
   methods: {
     search (id) {
-      console.log(this)
-    
-        this.$router.push({ name: 'photo',params:{id:`${id}`}})
+        const userId = id
+        console.log(userId)
+        this.$router.push({ path: '/photo',query:{userId}})
+       
     }
   },
   mounted () {

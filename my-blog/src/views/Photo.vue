@@ -109,7 +109,7 @@ export default {
     }
   },
   mounted () {
-    photoApi.getPhotos().then(res => {
+    photoApi.getPhotos(this.$route.query.userId).then(res => {
       const resp = res.data
       console.log(res)
       this.albums = resp

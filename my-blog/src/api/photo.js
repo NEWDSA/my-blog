@@ -1,14 +1,13 @@
 import request from '@/utils/request'
 
 export default {
-  getPhotos (id) {
-     const a =id;
+  getPhotos (userId) {
     return request({
-      url: `/photo/${a}`,
-      params:{
-        id:a
-      },
       method: 'get',
+      url: '/photo',
+      params: {
+        userId
+    }
       
     })
   }
