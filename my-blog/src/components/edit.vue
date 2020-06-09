@@ -1,8 +1,8 @@
 <template>
-  <div class="ax">
+  <div class="edit">
   <!-- bidirectional data binding（双向数据绑定） -->
     <quill-editor
-      class="ql-editor aa"
+      class="quill-editor"
       v-model="content"
       ref="myQuillEditor"
       :options="editorOption"
@@ -11,7 +11,7 @@
       @ready="onEditorReady($event)"
       @change="onEditorChange($event)"
     ></quill-editor>
-    <b-button class="btn" variant="primary" @click="publish($event)">发布</b-button>
+    <b-button class="b" variant="primary" @click="publish($event)">发布</b-button>
   </div>
 </template>
 <script>
@@ -21,6 +21,7 @@ export default {
       content: '<h2>I AM EXAMPLE</h2>',
       editorOption: {
         // some quill options
+        
       }
     }
   },
@@ -49,16 +50,12 @@ export default {
 }
 </script>
 <style scoped>
-.aa {
-  margin-top: 50px;
-  height: 400px;
-  overflow: hidden;
-}
-.ax{
-  height: 100%;
-}
-.btn{
-  margin-left: 15px;
-  bottom: 0;
-}
+  .b{
+    position: relative;
+    top: 10px;
+    left: 50%;
+    width: 200px;
+    margin-left: -100px;
+    text-align: center;
+  }
 </style>

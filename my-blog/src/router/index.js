@@ -9,6 +9,8 @@ import Search from '@/views/Search.vue'
 import Round from '@/components/Round.vue'
 import Music from '@/views/Music'
 import Photo from '@/views/Photo.vue'
+import Login from '@/views/Login.vue'
+import Edit from '@/components/edit.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -33,9 +35,20 @@ const routes = [
     component: Note
   },
   {
-    path: '/eidt',
-    name: 'edit',
-    component: Eidt
+    path: '/login',
+    name: 'login',
+    component: Login,
+    redirect:'/edit',
+    children:[
+      {
+        path:'/edit',
+        component:Edit,
+        meta:{
+          title:'編輯器'
+        }
+      }
+    ]
+
   },
   {
     path: '/about',

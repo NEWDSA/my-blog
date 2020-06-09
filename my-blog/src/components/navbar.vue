@@ -31,7 +31,7 @@
           <template v-slot:button-content>
             <em>Luciano</em>
           </template>
-          <b-dropdown-item href="#">设置</b-dropdown-item>
+          <b-dropdown-item href="#" to="/login">设置</b-dropdown-item>
           <b-dropdown-item href="#">登出</b-dropdown-item>
         </b-nav-item-dropdown>
       </b-navbar-nav>

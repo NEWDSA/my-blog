@@ -12,3 +12,9 @@ export default {
   }
 }
 </script>
+<style scoped>
+  .edit{
+    position: relative;
+    top: 70px;
+  }
+</style>
