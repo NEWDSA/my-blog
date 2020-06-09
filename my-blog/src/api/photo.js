@@ -7,8 +7,8 @@ export default {
       url: '/photo',
       params: {
         ph
-    }
-      
+      }
+
     })
   }
 }

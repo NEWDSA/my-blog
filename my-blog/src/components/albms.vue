@@ -80,9 +80,8 @@ export default {
   },
   methods: {
     search (id) {
-        const ph = id
-        this.$router.push({ path: '/photo',query:{ph}})
-       
+      const ph = id
+      this.$router.push({ path: '/photo', query: { ph } })
     }
   },
   mounted () {
