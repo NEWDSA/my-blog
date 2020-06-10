@@ -1,5 +1,12 @@
 <template>
   <div class="edit">
+  <table class="tbsr" border="1px solid " style="width:600px;">
+    <tr>
+    <td style="text-algin:center;">标题</td>
+    <td><input type="text" size="40"></td>
+    </tr>
+   <tr>
+   <td colspan="2">
   <!-- bidirectional data binding（双向数据绑定） -->
     <quill-editor
       class="quill-editor"
@@ -11,7 +18,16 @@
       @ready="onEditorReady($event)"
       @change="onEditorChange($event)"
     ></quill-editor>
-    <b-button class="b" variant="primary" @click="publish($event)">发布</b-button>
+    </td>
+    </tr>
+    <tr>
+    <td style="text-algin:center;"><b-form-select v-model="selected" :options="options"></b-form-select></td>
+    <td style="padding-left:120px;"><b-button class="b" variant="primary" @click="publish($event)">发布</b-button></td>
+    </tr>
+  
+   
+   
+    </table>
   </div>
 </template>
 <script>
@@ -22,7 +38,15 @@ export default {
       editorOption: {
         // some quill options
         
-      }
+      },
+      selected:null,
+      options:[
+        { value: null, text: '请选择需要发布到的模块' },
+          { value: 'a', text: '说说' },
+          { value: 'b', text: '相册' },
+          { value: 'c', text: '关于我' }
+          // { value: 'd', text: 'This one is disabled', disabled: true }
+      ]
     }
   },
   methods: {
@@ -50,12 +74,9 @@ export default {
 }
 </script>
 <style scoped>
-  .b{
+  .tbsr{
     position: relative;
-    top: 10px;
     left: 50%;
-    width: 200px;
-    margin-left: -100px;
-    text-align: center;
+    margin-left:-300px;
   }
 </style>

@@ -16,5 +16,6 @@ export default {
   .edit{
     position: relative;
     top: 70px;
+    /*border: 1px solid red;*/
   }
 </style>

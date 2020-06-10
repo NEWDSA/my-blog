@@ -38,17 +38,11 @@ const routes = [
     path: '/login',
     name: 'login',
     component: Login,
-    redirect:'/edit',
-    children:[
-      {
-        path:'/edit',
-        component:Edit,
-        meta:{
-          title:'編輯器'
-        }
-      }
-    ]
-
+  },
+  {
+    path:'/edit',
+    name:'edit',
+    component:Edit
   },
   {
     path: '/about',
