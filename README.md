@@ -12,16 +12,30 @@ sqlserver express 2019
 node v12.13.0
 webpack 4.41.2
 vue    4.41.2
-# 将要完成的功能
-1.首页的展示
-2.查看日记
+# 已完成的功能
+1.首页轮播
+2.查看随笔
+3.随笔浏览
+4.随笔上传
 3.相册浏览
-4.关于我
-5.数据分页(待考量）
-6.后台管理页面相册管理、日记管理、关于我页面的管理
-7.访问统计（待考量）
+4.查看相册详情
+5.关于我
+6.登录
+7.后台接口链接(https://github.com/NEWDSA/my-blogapi)
+#待完成功能
+1.Music 页面
+2.后台内容管理（计划使用 element-ui)
+3.桌面端 (win )
+4.页面美化
 # 数据表结构
-## 相册表(Luciano_Photo)
+## 相册表(Luciano_albums)
+| id         | int             |
+|------------|-----------------|
+| title      | nvarchar\(50\)  |
+| thumbnail        | nvarchar\(max\) |
+| insertTime | datetime        |
+| updateTime | datetime        |
+## 相片表(Luciano_Photo)
 | id         | int             |
 |------------|-----------------|
 | title      | nvarchar\(50\)  |
@@ -35,3 +49,9 @@ vue    4.41.2
 | content    | nvarchar\(max\) |
 | insertTime | datetime        |
 | updateTime | datetime        |
+## 管理员表(Luciano_Login)
+| id         | int             |
+|------------|-----------------|
+| username     | nvarchar\(50\)  |
+| password  | nvarchar\(50\) |
+
