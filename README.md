@@ -35,3 +35,9 @@ vue    4.41.2
 | content    | nvarchar\(max\) |
 | insertTime | datetime        |
 | updateTime | datetime        |
+## 管理员表(Luciano_Login)
+| id         | int             |
+|------------|-----------------|
+| username     | nvarchar\(50\)  |
+| password  | nvarchar\(50\) |
+
