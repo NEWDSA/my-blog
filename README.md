@@ -25,6 +25,7 @@ vue    4.41.2
 1.Music 页面
 2.后台内容管理（计划使用 element-ui)
 3.桌面端 (win )
+4.页面美化
 # 数据表结构
 ## 相册表(Luciano_albums)
 | id         | int             |
