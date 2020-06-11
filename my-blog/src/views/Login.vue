@@ -27,9 +27,7 @@ export default {
               if(this.username==''){
                   alert('请输入用户名!');
               }else if(this.password==''){
-                  alert('请输入密码!');
-              }else{
-                 alert('请检查用户名或密码!');
+                  
               }
           }
         }

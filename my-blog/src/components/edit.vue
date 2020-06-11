@@ -2,8 +2,8 @@
   <div class="edit">
   <table class="tbsr" border="1px solid " style="width:600px;">
     <tr>
-    <td style="text-algin:center;">标题</td>
-    <td><input type="text" size="40"></td>
+    <td>标题</td>
+    <td><input v-model="title" type="text" size="40"></td>
     </tr>
    <tr>
    <td colspan="2">
@@ -24,21 +24,20 @@
     <td style="text-algin:center;"><b-form-select v-model="selected" :options="options"></b-form-select></td>
     <td style="padding-left:120px;"><b-button class="b" variant="primary" @click="publish($event)">发布</b-button></td>
     </tr>
-  
-   
-   
     </table>
   </div>
 </template>
 <script>
+import addPublish from '@/api/addpublish'
 export default {
   data () {
     return {
-      content: '<h2>I AM EXAMPLE</h2>',
+      content: '',
       editorOption: {
         // some quill options
         
       },
+      title:'',
       selected:null,
       options:[
         { value: null, text: '请选择需要发布到的模块' },
@@ -65,8 +64,13 @@ export default {
       console.log('ready', this.messages)
     },
     publish () {
-      if (this.$el.__vue__.$children[0]._content === '') { window.alert('TEST OK' + this.$el.__vue__.$children[0]._content) } else { console.log('HI LINDA !!!!') }
-    }
+      //if (this.$el.__vue__.$children[0]._content === '') { window.alert('TEST OK' + this.$el.__vue__.$children[0]._content) } else { console.log('HI LINDA !!!!') }
+      addPublish.getPublish(this.title,this.content).then(res => {
+      const resp = res.data
+      console.log(res)
+      this.albums = resp
+    })
+  }
   },
   mounted () {
     console.log('this is current quill insance object', this.content)

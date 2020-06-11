@@ -3,8 +3,8 @@
     <b-container >
       <b-col cols="12" md="auto" v-for="aa in note" :key="aa.id">
         <div class="sty">
-          <h1 class="title">{{aa.title}}</h1>
-          <p>{{aa.content}}</p>
+          <h3 class="title">{{aa.title}}</h3><br>
+          <p v-html="aa.content">{{aa.content}}</p>
         </div>
       </b-col>
     </b-container>
@@ -35,18 +35,40 @@ export default {
   top: 70px;
 }
 .title {
+  position: relative;
   text-align: center;
+  top: 20px;
+  
 }
 .sty{
     position: relative;
-    background:pink;
+    /*background:pink;*/
+    background:rgba(0, 0, 17,0.1);
     width: 800px;
-    height: 800px;
+    /*height: 800px;*/
+    height: auto;
     margin-bottom: 30px;
     left: 50%;
     margin-left: -400px;
-    border-radius: 5%;
+    
     
 }
-
+p img{
+  width:100%;
+}
+@media screen and (max-width: 800px) {
+  .sty{
+    position: relative;
+    background:rgba(0, 0, 17,0.1);
+    width: 100%;
+    /*height: 800px;*/
+    margin-bottom: 30px;
+    left: 0%;
+    margin-left: 0;
+    height: auto;
+}
+p img{
+  width:100%;
+}
+}
 </style>
