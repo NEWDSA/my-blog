@@ -21,7 +21,14 @@ vue    4.41.2
 6.后台管理页面相册管理、日记管理、关于我页面的管理
 7.访问统计（待考量）
 # 数据表结构
-## 相册表(Luciano_Photo)
+## 相册表(Luciano_albums)
+| id         | int             |
+|------------|-----------------|
+| title      | nvarchar\(50\)  |
+| thumbnail        | nvarchar\(max\) |
+| insertTime | datetime        |
+| updateTime | datetime        |
+## 相片表(Luciano_Photo)
 | id         | int             |
 |------------|-----------------|
 | title      | nvarchar\(50\)  |
