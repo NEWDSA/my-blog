@@ -83,4 +83,17 @@ export default {
     left: 50%;
     margin-left:-300px;
   }
+  .ql-editor {
+  box-sizing: border-box;
+  line-height: 1.42;
+  height: 500vh;
+  outline: none;
+  overflow-y: auto;
+  padding: 12px 15px;
+  tab-size: 4;
+  -moz-tab-size: 4;
+  text-align: left;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
 </style>

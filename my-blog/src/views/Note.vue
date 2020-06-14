@@ -3,8 +3,8 @@
     <b-container >
       <b-col cols="12" md="auto" v-for="aa in note" :key="aa.id">
         <div class="sty">
-          <h3 class="title">{{aa.title}}</h3><br>
-          <p v-html="aa.content">{{aa.content}}</p>
+          <p v-html="aa.content">{{aa.content}}</p><br>
+          <!-- <h5 class="title">《{{aa.title}}》</h5> -->
         </div>
       </b-col>
     </b-container>
