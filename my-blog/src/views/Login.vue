@@ -106,10 +106,11 @@
     margin-top: -104.8px;
 }
 svg {
+     position: relative;
     overflow: hidden;
     margin-top: -90px;
     text-align: center;
-    margin-left: 25%;
+    margin-left: 64px;
 }
 @media screen and (max-width: 500px){
 .dd{
