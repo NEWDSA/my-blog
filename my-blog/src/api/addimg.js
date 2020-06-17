@@ -1,13 +1,13 @@
 import request from '@/utils/request'
 
 export default {
-  upimg (title,data) {
+  upimg (title, data) {
     return request({
       url: '/img',
       method: 'get',
-      data:{
-        title:title,
-        content:data
+      data: {
+        title: title,
+        content: data
       }
     })
   }

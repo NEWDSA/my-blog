@@ -35,16 +35,16 @@ export default {
       content: '',
       editorOption: {
         // some quill options
-        
+
       },
-      title:'',
-      selected:null,
-      options:[
+      title: '',
+      selected: null,
+      options: [
         { value: null, text: '请选择需要发布到的模块' },
-          { value: 'a', text: '说说' },
-          { value: 'b', text: '相册' },
-          { value: 'c', text: '关于我' }
-          // { value: 'd', text: 'This one is disabled', disabled: true }
+        { value: 'a', text: '说说' },
+        { value: 'b', text: '相册' },
+        { value: 'c', text: '关于我' }
+        // { value: 'd', text: 'This one is disabled', disabled: true }
       ]
     }
   },
@@ -64,13 +64,13 @@ export default {
       console.log('ready', this.messages)
     },
     publish () {
-      //if (this.$el.__vue__.$children[0]._content === '') { window.alert('TEST OK' + this.$el.__vue__.$children[0]._content) } else { console.log('HI LINDA !!!!') }
-      addPublish.getPublish(this.title,this.content).then(res => {
-      const resp = res.data
-      console.log(res)
-      this.albums = resp
-    })
-  }
+      // if (this.$el.__vue__.$children[0]._content === '') { window.alert('TEST OK' + this.$el.__vue__.$children[0]._content) } else { console.log('HI LINDA !!!!') }
+      addPublish.getPublish(this.title, this.content).then(res => {
+        const resp = res.data
+        console.log(res)
+        this.albums = resp
+      })
+    }
   },
   mounted () {
     console.log('this is current quill insance object', this.content)

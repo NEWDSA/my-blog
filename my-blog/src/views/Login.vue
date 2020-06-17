@@ -11,6 +11,7 @@
         width="128"
         height="128"
       >
+      
         <path
           d="M938.666667 938.666667c0 23.466667-19.2 42.666667-42.666667 42.666666H128c-23.466667 0-42.666667-19.2-42.666667-42.666666 0-198.4 96-377.6 243.2-462.933334-44.8-44.8-72.533333-108.8-72.533333-177.066666 0-140.8 115.2-256 256-256s256 115.2 256 256c0 68.266667-27.733333 132.266667-72.533333 177.066666C842.666667 561.066667 938.666667 740.266667 938.666667 938.666667zM172.8 896h678.4c-12.8-168.533333-106.666667-311.466667-236.8-362.666667-32 14.933333-66.133333 21.333333-104.533333 21.333334-36.266667 0-72.533333-8.533333-104.533334-21.333334-125.866667 51.2-219.733333 194.133333-232.533333 362.666667zM512 128c-93.866667 0-170.666667 76.8-170.666667 170.666667s76.8 170.666667 170.666667 170.666666 170.666667-76.8 170.666667-170.666666-76.8-170.666667-170.666667-170.666667z"
           fill="#2F3CF4"
@@ -42,53 +43,54 @@
 </template>
 
 <script>
-import {mapMutations} from 'vuex';
+import { mapMutations } from 'vuex'
 import Login from '@/api/login'
-  export default {
-    data() {
-      return {
-        form: {
-          username: '',
-          password: ''
-        },
-        show: true
-      }
-    },
-    methods: {
-    ...mapMutations(['changeLogin']),
-    login () {
-      let _this = this;
-      if (this.form.username === '' || this.form.password === '') {
-        alert('账号或密码不能为空');
-      } else {
-        Login.getLogin(this.FORM).then(res => {
-            const resp = res.data
-            console.log(res)
-            _this.userToken='Bearer'+res.data.data.body.token;
-         //将用户token保存到vuex中
-         _this.changeLogin({Authorization:_this.userToken});
-         _this.$router.push('/edit');
-      }).catch(er=>{
-        alert('账号或密码错误');
-        console.log(error);
-      })
+export default {
+  data () {
+    return {
+      form: {
+        username: '',
+        password: ''
+      },
+      show: true
     }
   },
-      onReset(evt) {
-        evt.preventDefault()
-        // Reset our form values
-        this.form.email = ''
-        this.form.name = ''
-        this.form.food = null
-        this.form.checked = []
-        // Trick to reset/clear native browser form validation state
-        this.show = false
-        this.$nextTick(() => {
-          this.show = true
+  methods: {
+    ...mapMutations(['changeLogin']),
+    login () {
+      console.log(this.form)
+      const _this = this;
+      if (this.form.username === '' || this.form.password === '') {
+        alert('账号或密码不能为空')
+      } else {
+        Login.getLogin(this.form).then(res => {
+          const resp = res.data
+          console.log(res)
+          _this.userToken = 'Bearer' + res.data.data.body.token
+          // 将用户token保存到vuex中
+          _this.changeLogin({ Authorization: _this.userToken })
+          _this.$router.push('/edit')
+        }).catch(er => {
+          alert('账号或密码错误')
+          console.log(error)
         })
       }
+    },
+    onReset (evt) {
+      evt.preventDefault()
+      // Reset our form values
+      this.form.email = ''
+      this.form.name = ''
+      this.form.food = null
+      this.form.checked = []
+      // Trick to reset/clear native browser form validation state
+      this.show = false
+      this.$nextTick(() => {
+        this.show = true
+      })
     }
   }
+}
 </script>
 <style scoped>
 .dd {

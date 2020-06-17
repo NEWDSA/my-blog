@@ -1,13 +1,13 @@
 import request from '@/utils/request'
 
 export default {
-  getPublish (title,data) {
+  getPublish (title, data) {
     return request({
       url: '/publish',
       method: 'post',
-      data:{
-        title:title,
-        content:data
+      data: {
+        title: title,
+        content: data
       }
     })
   }

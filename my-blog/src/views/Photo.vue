@@ -62,8 +62,6 @@ img {
 
 }
 
-
-
 @media screen and (max-width: 800px) {
   * {
     margin: 0;
@@ -112,13 +110,13 @@ export default {
     return {
       albums: [],
       flag: false,
-      img:''
+      img: ''
     }
   },
   methods: {
     photos (id) {
       this.flag = !this.flag
-      this.img=id
+      this.img = id
       console.log(this.albums[0].url)
     },
     close () {

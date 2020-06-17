@@ -38,7 +38,7 @@ export default {
   position: relative;
   text-align: center;
   top: 20px;
-  
+
 }
 .sty{
     position: relative;
@@ -50,8 +50,7 @@ export default {
     margin-bottom: 30px;
     left: 50%;
     margin-left: -400px;
-    
-    
+
 }
 p img{
   width:100%;

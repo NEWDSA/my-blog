@@ -5,9 +5,9 @@ export default {
     return request({
       url: '/login',
       method: 'post',
-      data:{
-        username:form.username,
-        password:form.password
+      data: {
+        username: form.username,
+        password: form.password
       }
     })
   }
