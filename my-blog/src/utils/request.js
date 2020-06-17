@@ -7,6 +7,9 @@ const request = axios.create({
 })
 // 请求拦截
 request.interceptors.request.use(config => {
+  if(localStorage.getItem('Authorization')){
+    config.headers.Authorization=localStorage.getItem('Authorization');
+  }
   // 请求拦截
   return config
 }, error => {
