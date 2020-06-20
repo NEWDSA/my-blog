@@ -8,7 +8,8 @@ import Search from '@/views/Search.vue'
 import Round from '@/components/Round.vue'
 import Music from '@/views/Music'
 import Photo from '@/views/Photo.vue'
-import Login from '@/views/Login.vue'
+//import Login from '@/views/Login.vue'
+import Login from '@/views/logins.vue'
 import Edit from '@/components/edit.vue'
 Vue.use(VueRouter)
 
