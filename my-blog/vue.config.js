@@ -1,5 +1,8 @@
 // const path = require('path')
 module.exports = {
+  configureWebpack: {
+    devtool: 'source-map'
+  },
   devServer: {
     port: 8888, // 端口号，如果端口号被占用，会自动提升1
     host: 'localhost', // 主机名, 127.0.0.1 真机 0.0.0.0

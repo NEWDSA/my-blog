@@ -14,7 +14,7 @@
 }
 </style>
 <script>
-import { mapMutations } from "vuex";
+import { mapMutations } from 'vuex'
 import Login from '@/api/login'
 export default {
   data() {
@@ -28,21 +28,20 @@ export default {
   },
 
   methods: {
-    ...mapMutations(["storeLogin"]),
+      ...mapMutations(['storeLogin']),
 
     login() {
      
-
        Login.getLogin(this.loginForm).then(res => {
-          const resp = res.data
-          console.log(res)
-          this.userToken = 'Bearer' + res.data.data.body.token
+          // const resp = res.data
+          console.log(res.data[0].username)
+          this.userToken = 'Bearer' + res.data[0].username
           // 将用户token保存到vuex中
-          this.changeLogin({ Authorization: _this.userToken })
+          this.storeLogin({ Authorization: this.userToken });
           this.$router.push('/edit')
         }).catch(er => {
           alert('账号或密码错误')
-          console.log(error)
+          console.log(er)
         })
       }
     }

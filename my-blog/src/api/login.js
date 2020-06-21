@@ -1,13 +1,13 @@
 import request from '@/utils/request'
 
 export default {
-  getLogin (loginForm) {
+  getLogin (form) {
     return request({
       url: '/login',
       method: 'post',
       data: {
-        username: loginForm.username,
-        password: loginForm.password
+        username: form.username,
+        password: form.password
       }
     })
   }

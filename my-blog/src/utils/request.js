@@ -6,15 +6,24 @@ const request = axios.create({
   timeout: 5000 // 请求超时,5000毫秒
 })
 // 请求拦截
+
+
+
 request.interceptors.request.use(config => {
-  if (localStorage.getItem('Authorization')) {
-    config.headers.Authorization = localStorage.getItem('Authorization')
+
+  if(localStorage.getItem('Authorization')) {
+
+    config.headers.Authorization = localStorage.getItem('Authorization');
+    console.log('ccc')
+
   }
-  // 请求拦截
-  return config
+
+  return config;
+
 }, error => {
   // 出现异常
   return Promise.reject(error)
+  console.log('err')
 })
 // 响应拦截
 request.interceptors.response.use(res => {

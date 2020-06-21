@@ -8,8 +8,8 @@ import Search from '@/views/Search.vue'
 import Round from '@/components/Round.vue'
 import Music from '@/views/Music'
 import Photo from '@/views/Photo.vue'
-//import Login from '@/views/Login.vue'
-import Login from '@/views/logins.vue'
+import Login from '@/views/Login.vue'
+// import Login from '@/views/logins.vue'
 import Edit from '@/components/edit.vue'
 Vue.use(VueRouter)
 
@@ -72,13 +72,21 @@ router.beforeEach((to, from, next) => {
   if (to.path === '/login') {
     next()
   } else {
-    const token = localStorage.getItem('Authorization')
+    var token = localStorage.getItem('Authorization');
+    if(to.path ==='/'||to.path==='/music'||to.path==='/albums'||to.path==='/photo'||to.path==='/about'||to.path==='/search'){
+      next();
+    }else{
+      if(token === null || token === '') {
 
-    if (token === 'null' || token === '') {
-      next('/login')
-    } else {
-      next()
+        next('/login');
+  
+      } else {
+        console.log(token===null)
+        next();
+  
+      }
     }
+    
   }
 })
 export default router

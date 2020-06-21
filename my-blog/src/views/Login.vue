@@ -1,6 +1,6 @@
 <template>
   <div class="dd">
-    <b-form @submit="login" @reset="onReset" v-if="show" class="fr">
+    <b-form  @reset="onReset" v-if="show" class="fr">
       <svg
         t="1592193533741"
         class="icon"
@@ -37,7 +37,8 @@
           placeholder="输入管理员密码"
         ></b-form-input>
       </b-form-group>
-      <b-button type="submit" class="mybtn" variant="primary">登录</b-button>
+      <!-- 使用@click.prevent 阻止默认事件 -->
+      <b-button type="submit" @click.prevent="login" class="mybtn" variant="primary">登录</b-button>
     </b-form>
   </div>
 </template>
@@ -56,23 +57,22 @@ export default {
     }
   },
   methods: {
-    ...mapMutations(['changeLogin']),
+    ...mapMutations(['storeLogin']),
     login () {
       console.log(this.form)
-      const _this = this;
       if (this.form.username === '' || this.form.password === '') {
         alert('账号或密码不能为空')
       } else {
         Login.getLogin(this.form).then(res => {
-          const resp = res.data
-          console.log(res)
-          _this.userToken = 'Bearer' + res.data.data.body.token
+          // const resp = res.data
+          console.log(res.data[0].username)
+          this.userToken = 'Bearer' + res.data[0].username
           // 将用户token保存到vuex中
-          _this.changeLogin({ Authorization: _this.userToken })
-          _this.$router.push('/edit')
+          this.storeLogin({ Authorization: this.userToken });
+          this.$router.push('/edit')
         }).catch(er => {
           alert('账号或密码错误')
-          console.log(error)
+          console.log(er)
         })
       }
     },
