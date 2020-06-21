@@ -7,19 +7,13 @@ const request = axios.create({
 })
 // 请求拦截
 
-
-
 request.interceptors.request.use(config => {
-
-  if(localStorage.getItem('Authorization')) {
-
-    config.headers.Authorization = localStorage.getItem('Authorization');
+  if (localStorage.getItem('Authorization')) {
+    config.headers.Authorization = localStorage.getItem('Authorization')
     console.log('ccc')
-
   }
 
-  return config;
-
+  return config
 }, error => {
   // 出现异常
   return Promise.reject(error)

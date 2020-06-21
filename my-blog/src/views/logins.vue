@@ -17,34 +17,33 @@
 import { mapMutations } from 'vuex'
 import Login from '@/api/login'
 export default {
-  data() {
+  data () {
     return {
       loginForm: {
-        username: "",
+        username: '',
 
-        password: ""
+        password: ''
       }
-    };
+    }
   },
 
   methods: {
-      ...mapMutations(['storeLogin']),
+    ...mapMutations(['storeLogin']),
 
-    login() {
-     
-       Login.getLogin(this.loginForm).then(res => {
-          // const resp = res.data
-          console.log(res.data[0].username)
-          this.userToken = 'Bearer' + res.data[0].username
-          // 将用户token保存到vuex中
-          this.storeLogin({ Authorization: this.userToken });
-          this.$router.push('/edit')
-        }).catch(er => {
-          alert('账号或密码错误')
-          console.log(er)
-        })
-      }
+    login () {
+      Login.getLogin(this.loginForm).then(res => {
+        // const resp = res.data
+        console.log(res.data[0].username)
+        this.userToken = 'Bearer' + res.data[0].username
+        // 将用户token保存到vuex中
+        this.storeLogin({ Authorization: this.userToken })
+        this.$router.push('/edit')
+      }).catch(er => {
+        alert('账号或密码错误')
+        console.log(er)
+      })
     }
   }
+}
 
 </script>

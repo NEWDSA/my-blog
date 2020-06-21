@@ -72,21 +72,17 @@ router.beforeEach((to, from, next) => {
   if (to.path === '/login') {
     next()
   } else {
-    var token = localStorage.getItem('Authorization');
-    if(to.path ==='/'||to.path==='/music'||to.path==='/albums'||to.path==='/photo'||to.path==='/about'||to.path==='/search'){
-      next();
-    }else{
-      if(token === null || token === '') {
-
-        next('/login');
-  
+    var token = localStorage.getItem('Authorization')
+    if (to.path === '/' || to.path === '/music' || to.path === '/albums' || to.path === '/photo' || to.path === '/about' || to.path === '/search') {
+      next()
+    } else {
+      if (token === null || token === '') {
+        next('/login')
       } else {
-        console.log(token===null)
-        next();
-  
+        console.log(token === null)
+        next()
       }
     }
-    
   }
 })
 export default router
