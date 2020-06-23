@@ -21,10 +21,10 @@ vue    4.41.2
 4.查看相册详情
 5.关于我
 6.登录
+7.Music页面
 7.后台接口链接(https://github.com/NEWDSA/my-blogapi)
 #待完成功能
-1.Music 页面
-2.后台内容管理（计划使用 element-ui)
+1.后台内容管理（计划使用 element-ui)
 3.桌面端 (win )
 4.页面美化
 # 数据表结构
