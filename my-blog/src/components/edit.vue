@@ -1,6 +1,6 @@
 <template>
   <div class="edit">
-  <table class="tbsr" border="1px solid " style="width:600px;">
+  <table class="tbsr">
     <tr>
     <td>标题</td>
     <td><input v-model="title" type="text" size="40"></td>
@@ -82,6 +82,8 @@ export default {
     position: relative;
     left: 50%;
     margin-left:-300px;
+    border:1px solid;
+    width:600px;
   }
   .ql-editor {
   box-sizing: border-box;
@@ -95,5 +97,17 @@ export default {
   text-align: left;
   white-space: pre-wrap;
   word-wrap: break-word;
+}
+@media screen and (max-width: 800px) {
+  
+  .tbsr{
+    position: relative;
+    width: 100%;
+    left: 0;
+    margin-left: 0;
+    border:1px solid;
+}
+
+
 }
 </style>

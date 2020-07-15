@@ -151,5 +151,11 @@ svg {
     border: 1px solid blue;
     background: rgba(0, 0, 17, 0.1);
   }
+ .icon{
+   position: relative;
+   top: 30px;
+   width:128px;
+  height:70px;
+ }
 }
 </style>
